@@ -1,2 +1,44 @@
 <h2>Search Country</h2>
 <hr>
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="search()">
+            <input type="search" 
+                   class="form-control" 
+                   placeholder="Search country"
+                   name="searchParam" 
+                   [(ngModel)]="searchParam">
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<div class="alert alert-warning" *ngIf="results">
+    No results found for {{searchParam}}
+</div>
+
+<div class="row" *ngIf="!results">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Country Name</th>
+                    <th>Flag</th>
+                    <th>Population</th>
+                    <th>options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>1</td>
+                <td>Country Name</td>
+                <td>Flag</td>
+                <td>654456</td>
+                <td>
+                    <a href="/pais/random">More...</a>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
