@@ -1,2 +1,44 @@
 <h2>Search Region</h2>
 <hr>
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="search()">
+            <input type="search" 
+                   class="form-control" 
+                   placeholder="Search region"
+                   name="searchParam" 
+                   [(ngModel)]="searchParam">
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<div class="alert alert-warning">
+    No results found for searchParams
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Region Name</th>
+                    <th>Flag</th>
+                    <th>Population</th>
+                    <th>options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>1</td>
+                <td>Region Name</td>
+                <td>Flag</td>
+                <td>654456</td>
+                <td>
+                    <a href="/pais/random">More...</a>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
