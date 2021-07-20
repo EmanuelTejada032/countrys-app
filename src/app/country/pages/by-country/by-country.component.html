@@ -18,7 +18,7 @@
     No results found for {{searchParam}}
 </div>
 
-<div class="row" *ngIf="!results">
+<div class="row" *ngIf="countries.length">
     <div class="col">
         <table class="table table-hover">
             <thead>
@@ -31,13 +31,17 @@
                 </tr>
             </thead>
             <tbody>
-                <td>1</td>
-                <td>Country Name</td>
-                <td>Flag</td>
-                <td>654456</td>
-                <td>
-                    <a href="/pais/random">More...</a>
-                </td>
+                <tr *ngFor="let country of countries; let i = index">
+                    <th>{{i + 1}}</th>
+                    <td>{{country.name}}</td>
+                    <td>
+                        <img class="small-flag" [src]="country.flag" alt="flag">
+                    </td>
+                    <td>{{country.population | number}}</td>
+                    <td>
+                        <a [routerLink]="['/country', country.alpha2Code]" href="/pais/random">More...</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
