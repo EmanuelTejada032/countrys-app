@@ -3,9 +3,10 @@
 <div class="row">
     <div class="col">
         <app-country-input 
-        (onEnter)="search( $event )">
-       </app-country-input> <!--3. onEnter emit value from input component searchParam and 
-                            pass it trough search(here) when calling the search method on this template component(countryComponent)-->
+        (onEnter)="search( $event )"
+        (onDebounce)="suggestions( $event)">
+       </app-country-input> <!-- EventEmitter 3. onEnter emit value  of searchParam from input component and 
+                            pass it trough search(here) when calling the search method on this component(countryComponent)-->
     </div>
 </div>
 

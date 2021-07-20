@@ -31,4 +31,9 @@ export class ByCountryComponent {
         });
   }
 
+  suggestions( searchParam: any){
+      this.results = false;
+      console.log(searchParam);
+  }
+
 }
