@@ -1,0 +1,7 @@
+<form (ngSubmit)="search()">  <!-- 1. Call the search method on this template component -->
+    <input type="search" 
+           class="form-control" 
+           placeholder="Search country"
+           name="searchParam" 
+           [(ngModel)]="searchParam">
+</form>

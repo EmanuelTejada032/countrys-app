@@ -18,8 +18,9 @@ export class ByCountryComponent {
 
   constructor( private countryService: CountryService){}
 
-  search(){
+  search( searchParam: string ){
     this.results = false;
+    this.searchParam = searchParam
     this.countryService.searchResource(this.searchParam)
         .subscribe( countries => {
           console.log(countries)
