@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-show-country',
@@ -8,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowCountryComponent implements OnInit {
 
-  constructor() { }
+  constructor( private activatedRoute : ActivatedRoute, private countryService: CountryService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params
+    .subscribe( ({id}) => {
+      console.log(id)
+
+      this.countryService.getCountryByCode( id )
+      .subscribe( country => console.log(country))
+      
+    })
   }
 
 }

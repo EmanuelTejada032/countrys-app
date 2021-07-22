@@ -21,8 +21,13 @@ export class CountryService {
 
     }
 
-    searchCapital( searchParam: string) :Observable <any>{
+    searchCapital( searchParam: string) :Observable <Country[]>{
       const url = `${this.apiBaseUrl}/capital/${searchParam}`
-      return this.http.get(url);
+      return this.http.get<Country[]>(url);
+    }
+
+    getCountryByCode( id: string): Observable<Country>{
+      const url = `${this.apiBaseUrl}/alpha/${id}`
+      return this.http.get<Country>(url);
     }
   }
