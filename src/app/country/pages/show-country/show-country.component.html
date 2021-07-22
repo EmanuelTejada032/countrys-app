@@ -1,2 +1,42 @@
 <h2>Country</h2>
 <hr>
+
+
+<div class="alert alert-info" role="alert" *ngIf="!country; else countryInfo">
+    Not country found
+</div>
+
+
+<ng-template #countryInfo>
+            <div class="row">
+                <div class="col-6">
+                    <img [src]="country.flag" class="img-fluid" alt="Flag">
+                    <h2>{{country.capital}} - {{country.name}}</h2>
+                 </div>
+                 <div class="col-4">
+                     <ul class="list-group">
+                        <li class="list-group-item"> <strong>Population:</strong> {{country.population | number}}</li>
+                        <li class="list-group-item"> <strong>Region:</strong> {{country.region}}</li>
+                        <li class="list-group-item"> <strong>Sub region:</strong> {{country.subregion}}</li>
+                        <li class="list-group-item"> <strong>Timezone:</strong> {{country.timezones}}</li>
+                        <li class="list-group-item" *ngFor="let lang of country.languages"> <strong>Languages:</strong> {{lang.name}}</li>
+                      </ul> 
+                 </div>      
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Translations</h4>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.br}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.de}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.es}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.fa}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.fr}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.hr}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.it}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.ja}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.nl}}</span>
+                    <span class="btn btn-primary btn-sm m-1">{{country.translations.pt}}</span>
+                    
+                </div>
+            </div>
+</ng-template>
