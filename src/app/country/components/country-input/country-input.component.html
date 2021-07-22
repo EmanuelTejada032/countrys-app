@@ -1,7 +1,7 @@
 <form (ngSubmit)="search()" autocomplete="off">  <!-- EventEmitter 1. Call the search method  on this component (countryInput)  -->
     <input type="search" 
            class="form-control" 
-           placeholder="Search country"
+           [placeholder]="placeholder"
            name="searchParam"
            (input)="pressKey()" 
            [(ngModel)]="searchParam"> <!-- debouncer 1. input event call the pressKey method on this component (countryInput) -->

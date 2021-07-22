@@ -4,7 +4,8 @@
     <div class="col">
         <app-country-input 
         (onEnter)="search( $event )"
-        (onDebounce)="suggestions( $event)">
+        (onDebounce)="suggestions( $event)"
+        placeholder="Search Country">
        </app-country-input> <!-- EventEmitter 3. onEnter emit value  of searchParam from input component and 
                             pass it trough search(here) when calling the search method on this component(countryComponent)-->
     </div>

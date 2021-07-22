@@ -11,13 +11,13 @@
     <tbody>
         <tr *ngFor="let country of countries; let i = index">
             <th>{{i + 1}}</th>
-            <td>{{country.name}}</td>
+            <td>{{country.capital}}, {{country.name}}</td>
             <td>
                 <img class="small-flag" [src]="country.flag" alt="flag">
             </td>
             <td>{{country.population | number}}</td>
             <td>
-                <a [routerLink]="['/country', country.alpha2Code]" href="/pais/random">More...</a>
+                <a [routerLink]="['/country', country.alpha2Code]" href="/pais/random" class="btn btn-primary">More...</a>
             </td>
         </tr>
     </tbody>
