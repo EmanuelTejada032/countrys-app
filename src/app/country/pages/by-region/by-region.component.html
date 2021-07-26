@@ -1,3 +1,14 @@
-<h2>Search Region</h2>
+<h2>Search Region <span>{{activeRegion | titlecase}}</span></h2>
 <hr>
 
+<h5>Select Region</h5>
+
+<div class="row">
+    <div class="col">
+        <button *ngFor="let region of regions" 
+                [class]="getCssClass(region)"
+                (click)="activateRegion(region)">
+            {{region | titlecase}}
+        </button>
+    </div>
+</div>
