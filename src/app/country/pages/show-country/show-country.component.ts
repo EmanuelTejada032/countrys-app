@@ -20,7 +20,7 @@ export class ShowCountryComponent implements OnInit {
     this.activatedRoute.params
         .pipe(
           switchMap( ({id}) => this.countryService.getCountryByCode(id)),
-          tap(console.log)
+          // tap(console.log)
         )
         .subscribe( country => this.country = country)
   }

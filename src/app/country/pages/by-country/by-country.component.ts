@@ -23,7 +23,7 @@ export class ByCountryComponent {
     this.searchParam = searchParam
     this.countryService.searchResource(this.searchParam)
         .subscribe( countries => {
-          console.log(countries)
+          // console.log(countries)
           this.countries = countries;
         }, (err) => {
             this.results = true;
@@ -33,7 +33,7 @@ export class ByCountryComponent {
 
   suggestions( searchParam: any){
       this.results = false;
-      console.log(searchParam);
+      // console.log(searchParam);
   }
 
 }
